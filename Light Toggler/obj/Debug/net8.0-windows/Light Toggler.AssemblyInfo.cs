@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Light Toggler")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c0b7ba5547181e24f1c4c4e8b116a837a6b8eae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd4034d8e687b1985deec4a179746ba85981136c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Light Toggler")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Light Toggler")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

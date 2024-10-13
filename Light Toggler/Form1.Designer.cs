@@ -34,6 +34,12 @@
             label1 = new Label();
             panel2 = new Panel();
             panel5 = new Panel();
+            panel9 = new Panel();
+            thirdMessageButton = new Button();
+            label8 = new Label();
+            panel8 = new Panel();
+            secondMessageButton = new Button();
+            label7 = new Label();
             panel6 = new Panel();
             brakeSendButton = new Button();
             label4 = new Label();
@@ -44,18 +50,25 @@
             label5 = new Label();
             timerLabel = new Label();
             panel7 = new Panel();
-            logPanel = new Panel();
-            label6 = new Label();
+            timerResetButton = new Button();
+            timerOffButton = new Button();
+            timerOnButton = new Button();
             log = new Panel();
+            offBulbPicture = new PictureBox();
             pictureBox1 = new PictureBox();
+            label6 = new Label();
+            logPanel = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
+            panel9.SuspendLayout();
+            panel8.SuspendLayout();
             panel6.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             panel7.SuspendLayout();
-            logPanel.SuspendLayout();
+            log.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)offBulbPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -115,12 +128,78 @@
             // 
             // panel5
             // 
+            panel5.Controls.Add(panel9);
+            panel5.Controls.Add(panel8);
             panel5.Controls.Add(panel6);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(0, 86);
             panel5.Name = "panel5";
             panel5.Size = new Size(432, 561);
             panel5.TabIndex = 5;
+            // 
+            // panel9
+            // 
+            panel9.BorderStyle = BorderStyle.FixedSingle;
+            panel9.Controls.Add(thirdMessageButton);
+            panel9.Controls.Add(label8);
+            panel9.Dock = DockStyle.Top;
+            panel9.Location = new Point(0, 300);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(432, 150);
+            panel9.TabIndex = 2;
+            // 
+            // thirdMessageButton
+            // 
+            thirdMessageButton.BackColor = Color.White;
+            thirdMessageButton.Location = new Point(92, 73);
+            thirdMessageButton.Name = "thirdMessageButton";
+            thirdMessageButton.Size = new Size(230, 52);
+            thirdMessageButton.TabIndex = 3;
+            thirdMessageButton.Text = "Send";
+            thirdMessageButton.UseVisualStyleBackColor = false;
+            thirdMessageButton.Click += brakeSendButton_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 18F);
+            label8.Location = new Point(54, 18);
+            label8.Name = "label8";
+            label8.Size = new Size(332, 48);
+            label8.TabIndex = 0;
+            label8.Text = "Stop: 0 1 1 0 0 1 0 1";
+            // 
+            // panel8
+            // 
+            panel8.BorderStyle = BorderStyle.FixedSingle;
+            panel8.Controls.Add(secondMessageButton);
+            panel8.Controls.Add(label7);
+            panel8.Dock = DockStyle.Top;
+            panel8.Location = new Point(0, 150);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(432, 150);
+            panel8.TabIndex = 1;
+            // 
+            // secondMessageButton
+            // 
+            secondMessageButton.BackColor = Color.White;
+            secondMessageButton.Location = new Point(92, 73);
+            secondMessageButton.Name = "secondMessageButton";
+            secondMessageButton.Size = new Size(230, 52);
+            secondMessageButton.TabIndex = 3;
+            secondMessageButton.Text = "Send";
+            secondMessageButton.UseVisualStyleBackColor = false;
+            secondMessageButton.Click += brakeSendButton_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 18F);
+            label7.Location = new Point(47, 22);
+            label7.Name = "label7";
+            label7.Size = new Size(339, 48);
+            label7.TabIndex = 0;
+            label7.Text = "Light: 1 0 1 0 1 0 1 0";
             // 
             // panel6
             // 
@@ -199,7 +278,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F);
-            label5.Location = new Point(21, 32);
+            label5.Location = new Point(21, 39);
             label5.Name = "label5";
             label5.Size = new Size(118, 32);
             label5.TabIndex = 5;
@@ -209,7 +288,7 @@
             // 
             timerLabel.AutoSize = true;
             timerLabel.Font = new Font("Segoe UI", 12F);
-            timerLabel.Location = new Point(127, 32);
+            timerLabel.Location = new Point(127, 39);
             timerLabel.Name = "timerLabel";
             timerLabel.Size = new Size(76, 32);
             timerLabel.TabIndex = 6;
@@ -217,6 +296,10 @@
             // 
             // panel7
             // 
+            panel7.BackColor = Color.White;
+            panel7.Controls.Add(timerResetButton);
+            panel7.Controls.Add(timerOffButton);
+            panel7.Controls.Add(timerOnButton);
             panel7.Controls.Add(timerLabel);
             panel7.Controls.Add(label5);
             panel7.Dock = DockStyle.Top;
@@ -225,51 +308,110 @@
             panel7.Size = new Size(573, 86);
             panel7.TabIndex = 7;
             // 
-            // logPanel
+            // timerResetButton
             // 
-            logPanel.Controls.Add(pictureBox1);
-            logPanel.Controls.Add(label6);
-            logPanel.Dock = DockStyle.Top;
-            logPanel.Location = new Point(432, 190);
-            logPanel.Name = "logPanel";
-            logPanel.Size = new Size(573, 81);
-            logPanel.TabIndex = 8;
+            timerResetButton.BackColor = Color.White;
+            timerResetButton.Enabled = false;
+            timerResetButton.FlatStyle = FlatStyle.System;
+            timerResetButton.Location = new Point(229, 6);
+            timerResetButton.Name = "timerResetButton";
+            timerResetButton.Size = new Size(97, 34);
+            timerResetButton.TabIndex = 8;
+            timerResetButton.Text = "Reset";
+            timerResetButton.UseVisualStyleBackColor = false;
+            timerResetButton.Click += timerResetButton_Click;
+            // 
+            // timerOffButton
+            // 
+            timerOffButton.BackColor = Color.LightCoral;
+            timerOffButton.Enabled = false;
+            timerOffButton.Location = new Point(124, 6);
+            timerOffButton.Name = "timerOffButton";
+            timerOffButton.Size = new Size(97, 34);
+            timerOffButton.TabIndex = 7;
+            timerOffButton.Text = "Off";
+            timerOffButton.UseVisualStyleBackColor = false;
+            timerOffButton.Click += timerOffButton_Click;
+            // 
+            // timerOnButton
+            // 
+            timerOnButton.BackColor = Color.FromArgb(128, 255, 128);
+            timerOnButton.Location = new Point(21, 6);
+            timerOnButton.Name = "timerOnButton";
+            timerOnButton.Size = new Size(97, 34);
+            timerOnButton.TabIndex = 3;
+            timerOnButton.Text = "On";
+            timerOnButton.UseVisualStyleBackColor = false;
+            timerOnButton.Click += timerOnButton_Click;
+            // 
+            // log
+            // 
+            log.BackColor = SystemColors.ActiveCaption;
+            log.BorderStyle = BorderStyle.FixedSingle;
+            log.Controls.Add(offBulbPicture);
+            log.Controls.Add(pictureBox1);
+            log.Controls.Add(label6);
+            log.Dock = DockStyle.Top;
+            log.Location = new Point(432, 190);
+            log.Name = "log";
+            log.Size = new Size(573, 81);
+            log.TabIndex = 8;
+            // 
+            // offBulbPicture
+            // 
+            offBulbPicture.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            offBulbPicture.BackColor = Color.White;
+            offBulbPicture.Image = Properties.Resources.light_bulb_off;
+            offBulbPicture.Location = new Point(405, 0);
+            offBulbPicture.Margin = new Padding(10);
+            offBulbPicture.Name = "offBulbPicture";
+            offBulbPicture.Padding = new Padding(10);
+            offBulbPicture.Size = new Size(128, 81);
+            offBulbPicture.SizeMode = PictureBoxSizeMode.Zoom;
+            offBulbPicture.TabIndex = 2;
+            offBulbPicture.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.Image = Properties.Resources.light_bulb_on;
+            pictureBox1.Location = new Point(405, 0);
+            pictureBox1.Margin = new Padding(10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Padding = new Padding(10);
+            pictureBox1.Size = new Size(128, 81);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 15F);
-            label6.Location = new Point(21, 22);
+            label6.Location = new Point(21, 18);
             label6.Name = "label6";
             label6.Size = new Size(68, 41);
             label6.TabIndex = 0;
             label6.Text = "Log";
             // 
-            // log
+            // logPanel
             // 
-            log.Dock = DockStyle.Fill;
-            log.Location = new Point(432, 271);
-            log.Name = "log";
-            log.Size = new Size(573, 480);
-            log.TabIndex = 9;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Right;
-            pictureBox1.Location = new Point(423, 0);
-            pictureBox1.Margin = new Padding(10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 81);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            logPanel.AutoScroll = true;
+            logPanel.BackColor = Color.White;
+            logPanel.Dock = DockStyle.Fill;
+            logPanel.Location = new Point(432, 271);
+            logPanel.Name = "logPanel";
+            logPanel.Size = new Size(573, 480);
+            logPanel.TabIndex = 9;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1401, 751);
-            Controls.Add(log);
             Controls.Add(logPanel);
+            Controls.Add(log);
             Controls.Add(panel7);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -280,6 +422,10 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel5.ResumeLayout(false);
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel4.ResumeLayout(false);
@@ -288,8 +434,9 @@
             panel3.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            logPanel.ResumeLayout(false);
-            logPanel.PerformLayout();
+            log.ResumeLayout(false);
+            log.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)offBulbPicture).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -312,9 +459,19 @@
         private Label label5;
         private Label timerLabel;
         private Panel panel7;
-        private Panel logPanel;
-        private Label label6;
         private Panel log;
+        private Label label6;
+        private Panel logPanel;
         private PictureBox pictureBox1;
+        private PictureBox offBulbPicture;
+        private Panel panel9;
+        private Button thirdMessageButton;
+        private Label label8;
+        private Panel panel8;
+        private Button secondMessageButton;
+        private Label label7;
+        private Button timerOnButton;
+        private Button timerOffButton;
+        private Button timerResetButton;
     }
 }
